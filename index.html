@@ -1,67 +1,196 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h1, h2 {
-      color: #003366;
-    }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Epicenter Padel, LLC — Court Rentals • Santa Monica</title>
+<meta name="description" content="Epicenter Padel, LLC • Rent premium padel courts in Santa Monica, CA. Hourly bookings, memberships, coaching, and events.">
+<meta property="og:title" content="Epicenter Padel, LLC — Court Rentals" />
+<meta property="og:description" content="Padel court rentals, coaching, and events in Santa Monica, CA." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://siampl.it/wp-content/uploads/2023/03/BANNER-copy-1.jpg" />
+<link rel="icon" href="https://siampl.it/wp-content/uploads/2023/03/BANNER-copy-1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#16a34a;    /* primary sport green */
+    --aqua:#06b6d4;     /* accent */
+    --ink:#0f172a;      /* header */
+    --text:#374151;     /* body */
+    --bg:#f3f4f6;       /* page */
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+  a{color:var(--green);text-decoration:none}
+
+  header{
+    background:linear-gradient(120deg,var(--ink),#0b1220);
+    color:#fff;text-align:center;padding:36px 16px;
+    border-bottom:6px solid var(--green);
+  }
+  header h1{margin:0;font-size:2.4rem;letter-spacing:.3px}
+  header p{margin:6px 0 0;opacity:.95}
+
+  nav{background:#0b1220;text-align:center;padding:12px}
+  nav a{color:#fff;margin:0 14px;font-weight:800}
+  nav a:hover{color:var(--aqua)}
+
+  .hero{max-width:1100px;margin:24px auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;padding:0 14px}
+  .hero img{width:100%;border-radius:14px;border:4px solid var(--green);object-fit:cover}
+  .panel{background:var(--white);border-left:6px solid var(--aqua);border-radius:14px;padding:16px}
+  .tag{display:inline-block;background:#dcfce7;border:1px solid #bbf7d0;color:#065f46;border-radius:999px;padding:6px 12px;margin:6px 6px 0 0;font-size:.9rem}
+
+  .section{max-width:1100px;margin:22px auto;background:var(--white);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+  .section h2{margin:0 0 12px;color:#111}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+
+  .card{background:#f9fafb;border:1px solid #e5e7eb;border-left:6px solid var(--green);
+        border-radius:10px;padding:12px;transition:.3s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 6px 12px rgba(0,0,0,.08)}
+
+  .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .price{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px}
+  .price h3{margin:0 0 6px}
+  .price .amt{font-weight:800;color:#111}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+  .gallery img{width:100%;border-radius:10px;border:2px solid var(--green);object-fit:cover;aspect-ratio:4/3;transition:.25s;background:#fff}
+  .gallery img:hover{transform:scale(1.03)}
+
+  .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--green);color:#fff;padding:12px 16px;border-radius:10px;font-weight:800}
+  .btn.secondary{background:#fff;color:#111;border:2px solid #111}
+
+  .map{max-width:1100px;margin:16px auto;border-radius:12px;overflow:hidden;border:3px solid var(--green)}
+  .map iframe{width:100%;height:360px;border:0;display:block}
+
+  footer{background:#111827;color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:6px solid var(--green)}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;background:#ffffffd9;backdrop-filter:blur(6px);
+       display:flex;gap:10px;justify-content:center;padding:10px;border-top:2px solid var(--green);z-index:999}
+  .bar a{background:#111827;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800}
+  .bar a:nth-child(2){background:var(--green)}
+  @media(min-width:820px){.bar{display:none}}
+  @media(max-width:900px){.hero{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
-  </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
+<header>
+  <h1>Epicenter Padel, LLC</h1>
+  <p>Padel Court Rentals • Santa Monica, CA</p>
+</header>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+<nav>
+  <a href="#about">About</a>
+  <a href="#rentals">Rentals</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://siampl.it/wp-content/uploads/2023/03/BANNER-copy-1.jpg" alt="Modern padel courts under lights">
+  <div class="panel">
+    <h2>Reserve premium courts by the hour.</h2>
+    <p>Grab a partner and play! Book well-lit, pro-spec padel courts minutes from the beach. Flexible hourly rentals, memberships, and coaching available.</p>
+    <div>
+      <span class="tag">🎾 Court Rentals</span>
+      <span class="tag">📅 Memberships</span>
+      <span class="tag">🏅 Coaching & Clinics</span>
+      <span class="tag">🎉 Events</span>
     </div>
-  </section>
+    <div class="cta">
+      <a class="btn" href="tel:+12832095602">Call: +1 (283) 209-5602</a>
+      <a class="btn secondary" href="mailto:service@monitale.shop">Email: service@monitale.shop</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
-  </footer>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p><strong>Epicenter Padel, LLC</strong> brings the fastest-growing racket sport to Santa Monica with professional courts, easy online booking, and a welcoming community for all levels.</p>
+  <p><strong>Address:</strong> Ocean Park Blvd., Ste 100, Santa Monica, CA 90405, United States •
+     <strong>Email:</strong> <a href="mailto:service@monitale.shop">service@monitale.shop</a> •
+     <strong>Phone:</strong> <a href="tel:+12832095602">+1 (283) 209-5602</a></p>
+</section>
+
+<!-- RENTALS / PRICING -->
+<section id="rentals" class="section">
+  <h2>Rentals & Memberships</h2>
+  <div class="pricing">
+    <div class="price">
+      <h3>Hourly Court Rental <span class="amt">— $36/hr</span></h3>
+      <p>60-minute court time • Up to 4 players • Evening lights included.</p>
+      <div class="cta"><a class="btn" href="tel:+12832095602">Book by Phone</a></div>
+    </div>
+    <div class="price">
+      <h3>Monthly Membership <span class="amt">— $89/mo</span></h3>
+      <p>Discounted court rates • Priority booking • Member mixers.</p>
+    </div>
+    <div class="price">
+      <h3>Coaching & Clinics <span class="amt">— from $60</span></h3>
+      <p>Private lessons or small-group clinics for all skill levels.</p>
+    </div>
+    <div class="price">
+      <h3>Events & Corporate <span class="amt">— custom</span></h3>
+      <p>Tournaments, birthdays, and team-building with on-site support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="https://img.diytrade.com/smimg/2995281/51643345-15360566-0/FX_P01_Classic_Padel_Court/771a.jpg" alt="Classic padel court">
+    <img src="https://neva-sport.shop/upload/iblock/1de/1dea4a4750b120dc0fc7aed7cc708632.jpg" alt="Padel equipment & balls">
+    <img src="https://siampl.it/wp-content/uploads/2023/03/BANNER-copy-1.jpg" alt="Night game on padel courts">
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map" id="map">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Ocean+Park+Blvd,+Ste+100,+Santa+Monica,+CA+90405&output=embed"
+          title="Map to Epicenter Padel, LLC"></iframe>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <h2>Contact & Hours</h2>
+  <div class="grid">
+    <div>
+      <p>📧 <strong>Email:</strong> <a href="mailto:service@monitale.shop">service@monitale.shop</a></p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+12832095602">+1 (283) 209-5602</a></p>
+      <p>📍 <strong>Address:</strong> Ocean Park Blvd., Ste 100, Santa Monica, CA 90405</p>
+    </div>
+    <div>
+      <p><em>Hours</em></p>
+      <ul>
+        <li>Mon–Fri: 7:00 – 22:00</li>
+        <li>Sat–Sun: 7:00 – 22:00</li>
+      </ul>
+      <p><small>Hours may vary for holidays and events.</small></p>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE BAR -->
+<div class="bar">
+  <a href="tel:+12832095602">Call</a>
+  <a href="mailto:service@monitale.shop">Email</a>
+  <a href="#rentals">Rentals</a>
+</div>
+
+<footer>
+  <p>&copy; 2025 Epicenter Padel, LLC — Play at the Epicenter.</p>
+</footer>
+
 </body>
 </html>
